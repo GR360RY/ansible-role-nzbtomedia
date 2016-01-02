@@ -1,0 +1,5 @@
+---
+# defaults file for nzbtomedia
+
+nzbtomedia_enabled: True
+nzbtomedia_path: /opt/nzbtomedia
