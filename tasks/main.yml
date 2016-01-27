@@ -16,8 +16,8 @@
 
 - name: Get latest nzbToMedia from github
   git: repo=https://github.com/clinton-hall/nzbToMedia.git dest={{ nzbtomedia_path }}
-  sudo: yes
-  sudo_user: "{{ htpc_user_username }}"
+  become: yes
+  become_user: "{{ htpc_user_username }}"
 
 # - name: Modify nzbToMedia file ownership
 #   file: path={{ nzbtomedia_path }} owner={{ htpc_user_username }} group={{ htpc_user_group }} recurse=yes
