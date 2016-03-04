@@ -11,16 +11,13 @@
     - p7zip
     - ffmpeg
 
-- name: Create nzbToMedia folder
-  file: state=directory path={{ nzbtomedia_path }} owner={{ htpc_user_username }} group={{ htpc_user_group }}
+- name: Make sure nzbToMedia directory has correct ownership
+  file: state=directory path={{ nzbtomedia_path }} owner={{ htpc_user_username }} group={{ htpc_user_group }} recurse=yes
 
 - name: Get latest nzbToMedia from github
   git: repo=https://github.com/clinton-hall/nzbToMedia.git dest={{ nzbtomedia_path }}
   become: yes
   become_user: "{{ htpc_user_username }}"
-
-# - name: Modify nzbToMedia file ownership
-#   file: path={{ nzbtomedia_path }} owner={{ htpc_user_username }} group={{ htpc_user_group }} recurse=yes
 
 - name: Upload nzbToMedia configuration template
   template: src=autoProcessMedia.cfg.j2 dest="{{ nzbtomedia_path }}/autoProcessMedia.cfg" owner={{ htpc_user_username }} group={{ htpc_user_group }}

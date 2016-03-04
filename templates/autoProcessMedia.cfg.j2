@@ -240,7 +240,7 @@
     useLink = hard
     ###### outputDirectory - Default output directory (categories will be appended as sub directory to outputDirectory)
 {% if deluge_enabled is defined and deluge_enabled %}
-    outputDirectory = {{ process_path }}
+    outputDirectory = {{ htpc_media_path }}/{{ htpc_media_downloads }}/incomplete/process
 {% else %}
     outputDirectory =
 {% endif %}
