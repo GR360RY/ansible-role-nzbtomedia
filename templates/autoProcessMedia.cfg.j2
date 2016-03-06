@@ -220,7 +220,7 @@
     sabnzbd_port = {{ sabnzbd_port }}
     sabnzbd_apikey = {{ sab_apikey }}
     ###### Enter the default path to your default download directory (non-category downloads). this directory is protected by safe_mode.
-    default_downloadDirectory = {{ htpc_media_path }}/{{ htpc_media_downloads }}
+    default_downloadDirectory = {{ htpc_downloads_complete }}
 {% else %}
     sabnzbd_host = localhost
     sabnzbd_port = 8080
@@ -240,13 +240,13 @@
     useLink = hard
     ###### outputDirectory - Default output directory (categories will be appended as sub directory to outputDirectory)
 {% if deluge_enabled is defined and deluge_enabled %}
-    outputDirectory = {{ htpc_media_path }}/{{ htpc_media_downloads }}/incomplete/process
+    outputDirectory = {{ htpc_downloads_incomplete }}/process
 {% else %}
     outputDirectory =
 {% endif %}
     ###### Enter the default path to your default download directory (non-category downloads). this directory is protected by safe_mode. 
 {% if deluge_enabled is defined and deluge_enabled %}
-    default_downloadDirectory = {{ htpc_media_path }}/{{ htpc_media_downloads }}
+    default_downloadDirectory = {{ htpc_downloads_complete }}
 {% else %}
     default_downloadDirectory =
 {% endif %}   
