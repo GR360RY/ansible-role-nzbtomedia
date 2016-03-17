@@ -11,4 +11,5 @@ galaxy_info:
   galaxy_tags:
     - htpc
     - system
-dependencies: []
+dependencies:
+  - GR360RY.htpc-common
